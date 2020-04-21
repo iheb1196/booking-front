@@ -1,0 +1,68 @@
+<div class="slider_area slider_bg_1">
+    <div class="slider_text">
+        <div class="container">
+            <form class="log-form" [formGroup]="addRouteForm" (ngSubmit)="AddRoute($event)">
+                <h3>Booking</h3>
+                <h6>A new Route</h6>
+                <div class="mt-10">
+                    <label>Departure</label>
+                    <input type="text" name="departure_" placeholder="departure"  class="single-input" formControlName="departure">
+                    <p class="text-danger" *ngIf="addRouteForm.value.departure.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Arrival</label>
+                    <input type=text name="arrival_" placeholder="arrival"  class="single-input" formControlName="arrival">
+                    <p class="text-danger" *ngIf="addRouteForm.value.arrival.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Number</label>
+                    <input type="text" name="number_" placeholder="number"  class="single-input" formControlName="number">
+                    <p class="text-danger" *ngIf="addRouteForm.value.login.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Date</label>
+                    <input type="text" name="date_" placeholder="date"  class="single-input" formControlName="Date">
+                    <p class="text-danger" *ngIf="addRouteForm.value.date.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Time</label>
+                    <input type="text" name="time_" placeholder="time"  class="single-input" formControlName="Time">
+                    <p class="text-danger" *ngIf="addRouteForm.value.time.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Price</label>
+                    <input type="text" name="price_" placeholder="price"  class="single-input" formControlName="price">
+                    <p class="text-danger" *ngIf="addRouteForm.value.price.length == 0">Required *</p>
+                </div>
+                <div class="mt-10">
+                    <label>Duration</label>
+                    <input type="text" name="duration_" placeholder="duration"  class="single-input" formControlName="duration">
+                    <p class="text-danger" *ngIf="addRouteForm.value.duration.length == 0">Required *</p>
+                </div>
+                
+                <div class="mt-10">
+                    <div class="alert alert-success" *ngIf="createdSuccessfully">
+                        Your account is created successfully, you can <a style="color: darkcyan;" routerLink="/login">login now</a>.
+                    </div>
+                    <div class="alert alert-danger" *ngIf="errorMessage">
+                        {{errorMessage}}
+                    </div>
+                    <div class="alert alert-info" *ngIf="isLoading">
+                        Please wait...
+                    </div>
+                    
+
+                </div>
+                <div class="button-group-area mt-10" >
+                    <button class="genric-btn primary" [disabled]="! addRouteForm.valid">Add Route</button> 
+                     
+                    <a routerLink="/accountAdmin" class="genric-btn success-border">Back</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+  
+  </div>
+
+ 
